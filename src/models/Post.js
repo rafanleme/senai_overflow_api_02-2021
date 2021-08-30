@@ -12,13 +12,13 @@ class Post extends Model {
                 gist: DataTypes.STRING,
             },
             {
-                connection,
+                sequelize: connection,
             }
         );
     }
 
     static associate(models){
-
+        this.belongsTo(models.User);
     }
 
 }
